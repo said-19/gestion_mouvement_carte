@@ -1,0 +1,37 @@
+﻿/* Styles généraux pour le footer */
+.footer {
+    background-color: #007bff; /* Couleur de fond sombre */
+    color: #ffffff; /* Couleur du texte en blanc */
+    padding: 20px 0; /* Espacement autour du contenu */
+}
+
+    .footer .container {
+        display: flex;
+        justify-content: space-between; /* Écarte les éléments à gauche et à droite */
+        align-items: center; /* Aligne verticalement les éléments */
+    }
+
+    .footer .left {
+        display: flex;
+    }
+
+        .footer .left a {
+            color: #ffffff; /* Couleur des liens en blanc */
+            text-decoration: none; /* Retire le soulignement des liens */
+            margin-right: 15px; /* Espacement entre les liens */
+            font-size: 14px; /* Taille de la police */
+        }
+
+            .footer .left a:hover {
+                text-decoration: underline; /* Soulignement au survol */
+            }
+
+    .footer .right {
+        text-align: right; /* Aligne le texte à droite */
+        font-size: 14px; /* Taille de la police */
+    }
+
+        /* Ajouter un style pour les coordonnées si nécessaire */
+        .footer .right .info {
+            margin-bottom: 5px; /* Espacement entre les lignes d'information */
+        }

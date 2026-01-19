@@ -1,0 +1,62 @@
+﻿@model IEnumerable<GestionMouvementCarte.Models.CarteElectronique>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<link rel="stylesheet" href="~/css/index.css" asp-append-version="true" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMPi1M2n0ewC4tFZBZX4hKjP0j4lGOF26G8d8Kc" crossorigin="anonymous">
+
+<p>
+    <a asp-action="Create">Ajouter une nouvelle carte</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Statut)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TypeMouvement)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateAjout)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DerniereUtilisation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Statut)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TypeMouvement)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateAjout)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DerniereUtilisation)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Reference" class="btn btn-primary btn-sm" title="Edit">
+                        Edit
+                    </a> |
+                    <a asp-action="Details" asp-route-id="@item.Reference" class="btn btn-info btn-sm" title="Details">
+                        Details
+                    </a> |
+                    <a asp-action="Delete" asp-route-id="@item.Reference" class="btn btn-danger btn-sm" title="Delete">
+                        Delete
+                    </a>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>

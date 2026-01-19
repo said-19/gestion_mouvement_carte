@@ -1,0 +1,97 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Profile";
+    ViewData["ActivePage"] = ManageNavPages.Index;
+}
+
+<div class="container">
+    <h3>@ViewData["Title"]</h3>
+
+    <div class="row">
+        <div class="col-md-3">
+            <!-- Sidebar navigation -->
+            <div class="list-group">
+                <a href="#profile" class="list-group-item list-group-item-action active" data-target="profile">Profile</a>
+                <a href="#email" class="list-group-item list-group-item-action" data-target="email">Email</a>
+                <a href="#password" class="list-group-item list-group-item-action" data-target="password">Password</a>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <!-- Profile form -->
+            <div id="profile" class="content-section">
+                <form id="profile-form" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                    <div class="form-floating mb-3">
+                        <input asp-for="Username" class="form-control" placeholder="Please choose your username." disabled />
+                        <label asp-for="Username" class="form-label"></label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input asp-for="Input.PhoneNumber" class="form-control" placeholder="Please enter your phone number." value="@Model.Input.PhoneNumber" />
+                        <label asp-for="Input.PhoneNumber" class="form-label"></label>
+                        <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+                    </div>
+                    <button id="update-profile-button" type="submit" class="w-100 btn btn-lg btn-primary">Save</button>
+                </form>
+            </div>
+
+            <!-- Email form -->
+            <div id="email" class="content-section" style="display: none;">
+                <h4>Email</h4>
+                <form asp-page-handler="UpdateEmail" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                    <div class="form-floating mb-3">
+                        <input asp-for="Input.Email" class="form-control" placeholder="Enter your new email" value="@Model.Input.Email" />
+                        <label asp-for="Input.Email" class="form-label">New Email</label>
+                        <span asp-validation-for="Input.Email" class="text-danger"></span>
+                    </div>
+                    <button type="submit" class="w-100 btn btn-lg btn-primary">Update Email</button>
+                </form>
+            </div>
+
+            <!-- Password form -->
+            <div id="password" class="content-section" style="display: none;">
+                <h4>Password</h4>
+                <form asp-page-handler="UpdatePassword" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                    <div class="form-floating mb-3">
+                        <input asp-for="Input.CurrentPassword" type="password" class="form-control" placeholder="Current Password" value="@Model.Input.CurrentPassword" />
+                        <label asp-for="Input.CurrentPassword" class="form-label">Current Password</label>
+                        <span asp-validation-for="Input.CurrentPassword" class="text-danger"></span>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input asp-for="Input.NewPassword" type="password" class="form-control" placeholder="New Password" value="@Model.Input.NewPassword" />
+                        <label asp-for="Input.NewPassword" class="form-label">New Password</label>
+                        <span asp-validation-for="Input.NewPassword" class="text-danger"></span>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input asp-for="Input.ConfirmPassword" type="password" class="form-control" placeholder="Confirm New Password" value="@Model.Input.ConfirmPassword" />
+                        <label asp-for="Input.ConfirmPassword" class="form-label">Confirm New Password</label>
+                        <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                    </div>
+                    <button type="submit" class="w-100 btn btn-lg btn-primary">Change Password</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        document.querySelectorAll('.list-group-item').forEach(item => {
+            item.addEventListener('click', event => {
+                event.preventDefault();
+                document.querySelectorAll('.content-section').forEach(section => {
+                    section.style.display = 'none';
+                });
+                document.querySelectorAll('.list-group-item').forEach(link => {
+                    link.classList.remove('active');
+                });
+                const targetId = item.getAttribute('data-target');
+                document.getElementById(targetId).style.display = 'block';
+                item.classList.add('active');
+            });
+        });
+    </script>
+}

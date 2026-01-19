@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<link rel="stylesheet" href="~/css/home.css" asp-append-version="true" />
+
+<div class="jumbotron text-center">
+    <h1 class="display-4">Plateforme de gestion des mouvements des cartes électroniques</h1>
+    <p class="lead">Bienvenue sur la plateforme de gestion des mouvements des cartes électroniques de TIS Circuit. Cette solution innovante permet une supervision efficace et centralisée des cartes au sein de nos unités de production. Grâce à un suivi en temps réel, la gestion des autorisations et des flux est simplifiée, garantissant ainsi la sécurité et la traçabilité des opérations. Que vous soyez administrateur, chef d'équipe ou technicien, notre interface intuitive vous offre les outils nécessaires pour optimiser votre travail et maintenir un contrôle rigoureux des processus de production.</p>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Gestion des employés</h5>
+                    <p class="card-text">Gérez efficacement les informations des employés.</p>
+                   @*  <a href="#" class="btn btn-info">En savoir plus</a> *@
+                    <a class="btn btn-info" asp-area="Identity" asp-page="/Account/Login">En savoir plus</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Suivi des cartes</h5>
+                    <p class="card-text">Surveillez les mouvements des cartes électroniques.</p>
+                    <a class="btn btn-info" asp-area="Identity" asp-page="/Account/Login">En savoir plus</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Rapports et analyses</h5>
+                    <p class="card-text">Accédez à des rapports détaillés et à des analyses.</p>
+                    <a class="btn btn-info" asp-area="Identity" asp-page="/Account/Login">En savoir plus</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,77 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+
+/**footer css*/
+
+/* Styles de base pour le corps et le contenu */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Assure que le contenu principal prend l'espace disponible */
+.content {
+    flex: 1;
+}
+
+/* Styles pour le footer */
+.footer {
+    background-color: #f8f9fa; /* Couleur de fond du footer */
+    padding: 10px 0; /* Padding interne */
+    border-top: 1px solid #ddd; /* Bordure en haut du footer */
+    position: relative;
+    width: 100%;
+}
+
+/* Contenu du footer */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-left {
+    flex: 1;
+}
+
+.footer-right {
+    flex: 1;
+    text-align: right;
+}
+
+    .footer-right a {
+        margin-left: 15px;
+        color: #007bff;
+        text-decoration: none;
+    }
+
+        .footer-right a:hover {
+            text-decoration: underline;
+        }
+

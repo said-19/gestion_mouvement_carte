@@ -1,0 +1,63 @@
+﻿/* Center the card and set its maximum width */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+/* Card styling */
+.card {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+    /* Hover effect for the card */
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+/* Title styling */
+h1 {
+    text-align: center;
+    color: #343a40;
+    margin-bottom: 30px;
+}
+
+/* Display label and data on the same line with spacing */
+.row dt, .row dd {
+    display: inline-block;
+    margin: 10px 0;
+}
+
+.row dt {
+    font-weight: bold;
+    color: #007bff;
+    width: 35%;
+}
+
+.row dd {
+    width: 60%;
+    color: #343a40;
+    margin-left: 5%;
+}
+
+/* Button styling */
+a.btn {
+    margin-top: 20px;
+    display: inline-block;
+    text-align: center;
+    color: white;
+    background-color: #007bff;
+    border-radius: 5px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+    a.btn:hover {
+        background-color: #0056b3;
+        text-decoration: none;
+    }
